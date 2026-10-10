@@ -1,0 +1,17 @@
+# Local development database only
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: gym-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      TZ: Asia/Kolkata
+    ports:
+      - "3306:3306"
+    volumes:
+      - gym_mysql_data:/var/lib/mysql
+volumes:
+  gym_mysql_data:

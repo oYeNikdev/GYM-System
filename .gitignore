@@ -1,0 +1,31 @@
+# Secrets - NEVER commit
+.env
+*.env
+!.env.example
+application-prod.*
+application-local.*
+*.pem
+*.key
+
+# Backend
+backend/target/
+*.class
+*.log
+.mvn/wrapper/maven-wrapper.jar
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+# IDE / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store
+
+# Data
+*.sql.gz
+*.dump
+uploads/
+backups/
