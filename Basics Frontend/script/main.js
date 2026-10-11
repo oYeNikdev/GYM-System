@@ -104,7 +104,8 @@ function setupForm() {
     const id = e.target.dataset.plan;
     if (!id) return;
     $("#plan").value = id;
-    $("#trial").scrollIntoView({ behavior: "smooth" });
+    const behavior = matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+    $("#trial").scrollIntoView({ behavior });
     setTimeout(() => $("#name").focus({ preventScroll: true }), 400);
   });
 }
