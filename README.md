@@ -1,26 +1,27 @@
-# Gym Website & Management System
+# Gym System
 
-Website + membership management for a small Indian gym.
-Stack: React + Tailwind, Spring Boot (modular monolith), MySQL, Flyway.
+A work-in-progress website and gym-management project for a small Indian gym. The currently usable website is a static demo; business details shown on it are unverified.
 
-## Status
-| Phase | Status |
-|---|---|
-| 0 Requirements | Draft docs ready, awaiting client answers |
-| 2 Database | Initial schema in `backend/.../db/migration/V1__init_schema.sql` |
-| 1, 3-11 | Not started |
+## Current project structure
 
-## Structure
-- `docs/`      requirements, scope, database design
-- `backend/`   Spring Boot API (Java 21, Maven)
-- `frontend/`  React app (Phase 1)
+- `Basics Frontend/` - Working single-page HTML, CSS, and vanilla JavaScript demo.
+- `frontend/` - Reserved for a planned React + Tailwind frontend; the app is not implemented yet.
+- `backend/` - Spring Boot 3.5 / Java 21 Maven scaffold, application configuration, and an initial Flyway database migration.
+- `docker-compose.yml` - Local MySQL service configuration only.
+- `docs/` - Draft requirements, project scope, and database design.
 
-## Run locally
-1. `cp .env.example .env` and set passwords
-2. `docker compose up -d`  (MySQL)
-3. `cd backend && mvn spring-boot:run`  (Flyway creates tables automatically)
-4. Health check: http://localhost:8080/actuator/health
+The backend does not yet provide application API endpoints, authentication, or admin features. The static demo does not connect to the backend or database.
 
-## Rules
-- Never commit `.env`, keys, real member data or DB dumps.
-- All schema changes go in a NEW Flyway file (V2__..., V3__...). Never edit an applied one.
+## Run the static website demo
+
+No Node.js, Java, or database is needed to view the demo.
+
+Open `Basics Frontend/index.html` directly in a browser.
+
+The page uses example plan names and unverified placeholder content. Its trial form only validates fictional test values in the browser; it does not save or send information or book a visit. Contact actions stay disabled until verified business details are added in `Basics Frontend/script/data.js`.
+
+## Planned work
+
+The project scope proposes a React + Tailwind public site and admin panel, plus Spring Boot features for enquiries, members, plans, memberships, payments, and reporting. These features are not implemented. Database configuration and an initial schema migration exist, but end-to-end database-backed application behavior has not been verified.
+
+Review `docs/02-project-scope.md` before treating planned features as requirements.

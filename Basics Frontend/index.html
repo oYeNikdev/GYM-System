@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IronCore Fitness | Gym, Trainers & Membership Plans (Sample Site)</title>
-<meta name="description" content="IronCore Fitness is a fictional gym used for a learning project. Explore sample membership plans in ₹ and book a free trial enquiry.">
+<title>IronCore Fitness | Sample Gym Website</title>
+<meta name="description" content="A static sample gym website. Business details, membership plans, and contact information are unverified placeholders.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
     <a href="#home" class="logo">IronCore<span>Fitness</span></a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav id="nav" aria-label="Main">
-      <a href="#about">About</a><a href="#plans">Plans</a><a href="#trial">Free Trial</a><a href="#contact">Contact</a>
+      <a href="#about">About</a><a href="#plans">Plans</a><a href="#trial">Form Demo</a><a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -29,30 +29,25 @@
   <img class="hero-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=70" alt="" fetchpriority="high">
   <div class="wrap hero-copy">
     <h1>Strength is built on the days you show up.</h1>
-    <p>Coached floor sessions, serious equipment and a plan that fits your schedule. Start with a free trial and decide after you've trained with us.</p>
+    <p>Gym services, equipment, and membership information are to be confirmed. This page is a website demo, not a live gym booking service.</p>
     <div class="actions">
-      <a class="btn btn-red" href="#trial">Book a Free Trial</a>
+      <a class="btn btn-red" href="#trial">Try the form demo</a>
       <a class="btn btn-ghost" href="#plans">View Membership Plans</a>
     </div>
-    <p class="note">IronCore Fitness is a fictional gym created for a learning project.</p>
+    <p class="note">IronCore Fitness is a fictional demo brand. Business details have not been verified.</p>
   </div>
 </section>
 
 <section id="about" class="section">
   <div class="wrap">
-    <h2>Built for beginners and lifters alike</h2>
+    <h2>About the gym</h2>
     <div class="two">
-      <p>IronCore began as a small training hall with one rule: every member gets noticed. Today the idea is the same. Trainers learn your goals, check your form and adjust your plan as you improve. <em>(Sample story for the demo.)</em></p>
-      <ul class="ticks">
-          <li>Free fitness assessment on your first visit</li>
-          <li>Trainers on the floor during all peak hours</li>
-          <li>Clean, air-conditioned training space</li>
-          <li>No joining pressure after your trial</li>
-      </ul>
+      <p>Gym background and service information will be added after they are confirmed.</p>
+      <p class="note">This demo does not make claims about services, equipment, or facilities.</p>
     </div>
     <h3>Facilities and equipment</h3>
     <ul id="facilities" class="grid facilities"></ul>
-    <h3>Meet the trainers <small>Fictional sample profiles</small></h3>
+    <h3>Meet the trainers</h3>
     <div id="trainers" class="grid trainers"></div>
   </div>
 </section>
@@ -60,26 +55,26 @@
 <section id="plans" class="section alt">
   <div class="wrap">
     <h2>Membership plans</h2>
-    <p class="lead">Sample prices for the demo. Taxes and joining fees, if any, are not shown.</p>
+    <p class="lead">Plan names are examples only. Prices, durations, and inclusions are to be confirmed.</p>
     <div id="plan-list" class="grid plans"></div>
   </div>
 </section>
 
 <section id="trial" class="section">
   <div class="wrap narrow">
-    <h2>Book a free trial</h2>
-    <p class="lead">Tell us when you'd like to visit and we'll confirm.</p>
-    <p class="warn" role="note"><strong>Demo only:</strong> this form does not send data to a server. Test submissions are saved in this browser's localStorage, which is temporary and not suitable for real customer data.</p>
-    <form id="trial-form" novalidate>
-      <div class="field"><label for="name">Full name</label>
-        <input id="name" name="name" autocomplete="name" required aria-describedby="name-err"><p class="err" id="name-err"></p></div>
-      <div class="field"><label for="mobile">Mobile number</label>
-        <input id="mobile" name="mobile" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="10-digit number, e.g. 9XXXXXXXXX" required aria-describedby="mobile-err"><p class="err" id="mobile-err"></p></div>
-      <div class="field"><label for="plan">Preferred plan</label>
+    <h2>Trial form demo</h2>
+    <p class="lead">Try the client-side validation using fictitious test values. No visit will be booked.</p>
+    <p class="warn" role="note"><strong>Demo only:</strong> enter fictional test details. Validation runs in this browser; information is not sent or saved.</p>
+    <form id="trial-form" autocomplete="off" novalidate>
+      <div class="field"><label for="name">Test name (fictional)</label>
+        <input id="name" name="name" required aria-describedby="name-err"><p class="err" id="name-err"></p></div>
+      <div class="field"><label for="mobile">Test mobile number (fictional)</label>
+        <input id="mobile" name="mobile" type="tel" inputmode="numeric" placeholder="Fictitious 10-digit test number" required aria-describedby="mobile-err"><p class="err" id="mobile-err"></p></div>
+      <div class="field"><label for="plan">Example plan</label>
         <select id="plan" name="plan" required aria-describedby="plan-err"></select><p class="err" id="plan-err"></p></div>
-      <div class="field"><label for="date">Preferred visit date</label>
+      <div class="field"><label for="date">Example visit date</label>
         <input id="date" name="date" type="date" required aria-describedby="date-err"><p class="err" id="date-err"></p></div>
-      <button class="btn btn-red" type="submit">Request free trial</button>
+      <button class="btn btn-red" type="submit">Validate demo form</button>
       <p id="form-status" role="status" tabindex="-1"></p>
     </form>
   </div>
@@ -89,7 +84,7 @@
   <div class="wrap two">
     <div>
       <h2>Contact</h2>
-      <p><strong>Address (sample, not a real location):</strong><br>123 Sample Street, Your City, India</p>
+      <p><strong>Address:</strong><br>Details to be confirmed.</p>
       <h3>Opening hours</h3>
       <ul id="hours" class="hours"></ul>
     </div>
@@ -97,9 +92,9 @@
       <h3>Reach us</h3>
       <p id="contact-note" class="note"></p>
       <div class="actions">
-        <a id="call-btn" class="btn btn-red" href="#contact">Call</a>
-        <a id="wa-btn" class="btn btn-ghost" href="#contact">WhatsApp</a>
-        <a id="map-btn" class="btn btn-ghost" href="#contact">View map</a>
+        <a id="call-btn" class="btn btn-red" aria-disabled="true">Call</a>
+        <a id="wa-btn" class="btn btn-ghost" aria-disabled="true">WhatsApp</a>
+        <a id="map-btn" class="btn btn-ghost" aria-disabled="true">View map</a>
       </div>
     </div>
   </div>
@@ -108,8 +103,8 @@
 
 <footer class="footer">
   <div class="wrap">
-    <nav aria-label="Footer"><a href="#about">About</a><a href="#plans">Plans</a><a href="#trial">Free Trial</a><a href="#contact">Contact</a><a href="#home">Back to top</a></nav>
-    <p>© <span id="year"></span> IronCore Fitness. Fictional gym for a learning project. Photos from Unsplash.</p>
+    <nav aria-label="Footer"><a href="#about">About</a><a href="#plans">Plans</a><a href="#trial">Form Demo</a><a href="#contact">Contact</a><a href="#home">Back to top</a></nav>
+    <p>© <span id="year"></span> IronCore Fitness demo. Business details are unverified. Hero image: Unsplash.</p>
   </div>
 </footer>
 </body>
