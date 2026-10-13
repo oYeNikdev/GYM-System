@@ -1,7 +1,16 @@
 # Planned Frontend
 
-This directory is reserved for the planned React + Tailwind frontend. It currently contains no application source, `package.json`, dependencies, or runnable scripts.
+This directory contains a React + Vite preview of the gym's public website. It uses custom CSS; Tailwind is not installed.
 
-The existing public website demo is in [`Basics Frontend/`](../Basics%20Frontend/). Do not expect this directory to run yet.
+The existing static HTML/CSS/JavaScript demo remains in [`Basics Frontend/`](../Basics%20Frontend/).
 
-The project scope proposes public gym pages and an admin panel for enquiries and gym management. Those React views and their backend/API integration have not been implemented. See [`docs/02-project-scope.md`](../docs/02-project-scope.md) for the draft scope.
+## Run locally
+
+```powershell
+npm install
+npm run dev
+```
+
+Vite prints the local URL. Run `npm run build` to create a production bundle in `dist/`.
+
+Gym details are unverified placeholders. The React preview has no booking form, API integration, authentication, or admin functionality. Those features are proposed in the draft [`project scope`](../docs/02-project-scope.md), but are not implemented.

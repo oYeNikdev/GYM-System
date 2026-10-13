@@ -5,18 +5,30 @@ A work-in-progress website and gym-management project for a small Indian gym. Th
 ## Current project structure
 
 - `Basics Frontend/` - Working single-page HTML, CSS, and vanilla JavaScript demo.
-- `frontend/` - Reserved for a planned React + Tailwind frontend; the app is not implemented yet.
+- `frontend/` - React + Vite public-site preview with custom CSS.
 - `backend/` - Spring Boot 3.5 / Java 21 Maven scaffold, application configuration, and an initial Flyway database migration.
 - `docker-compose.yml` - Local MySQL service configuration only.
 - `docs/` - Draft requirements, project scope, and database design.
 
-The backend does not yet provide application API endpoints, authentication, or admin features. The static demo does not connect to the backend or database.
+The React preview and static demo do not connect to the backend or database. The backend does not yet provide application API endpoints, authentication, or admin features. Tailwind and the planned admin panel are not implemented.
 
 ## Run the static website demo
 
 No Node.js, Java, or database is needed to view the demo.
 
 Open `Basics Frontend/index.html` directly in a browser.
+
+## Run the React preview
+
+From the repository root:
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+Open the local URL printed by Vite. To check a production build, run `npm run build` from `frontend/`.
 
 The page uses example plan names and unverified placeholder content. Its trial form only validates fictional test values in the browser; it does not save or send information or book a visit. Contact actions stay disabled until verified business details are added in `Basics Frontend/script/data.js`.
 
