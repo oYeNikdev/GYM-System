@@ -6,7 +6,7 @@ A work-in-progress website and gym-management project for a small Indian gym. Th
 
 - `Basics Frontend/` - Working single-page HTML, CSS, and vanilla JavaScript demo.
 - `frontend/` - React + Vite public-site preview with custom CSS.
-- `backend/` - Spring Boot 3.5 / Java 21 Maven scaffold, application configuration, and an initial Flyway database migration.
+- `backend/` - Spring Boot 3.5 / Java 25 Maven scaffold, application configuration, and an initial Flyway database migration.
 - `docker-compose.yml` - Local MySQL service configuration only.
 - `docs/` - Draft requirements, project scope, and database design.
 
