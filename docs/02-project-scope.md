@@ -26,7 +26,7 @@ Admin: Login, Dashboard, Members, Member detail, Plans, Payments, Expiring/Expir
 MVP: ADMIN. (Optional: STAFF with limited rights.) Member and Trainer portals are out of scope.
 
 ## 5. Technology
-React + Tailwind, Java 21 + Spring Boot, MySQL, hosted over HTTPS.
+React + Tailwind, Java 25 + Spring Boot, MySQL, hosted over HTTPS.
 
 ## 6. Deliverables
 Deployed website and admin panel, admin credentials, source code (after final payment), short user guide, one training session.

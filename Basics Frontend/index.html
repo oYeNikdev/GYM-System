@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -107,5 +107,147 @@
     <p>© <span id="year"></span> IronCore Fitness demo. Business details are unverified. Hero image: Unsplash.</p>
   </div>
 </footer>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IronCore Fitness | Membership Plans and Free Trial</title>
+<meta name="description" content="Explore sample IronCore Fitness membership plans and request a free trial. Enquiries are sent securely to the gym enquiry service.">
+<meta name="theme-color" content="#161616">
+<meta property="og:type" content="website">
+<meta property="og:title" content="IronCore Fitness | Membership Plans and Free Trial">
+<meta property="og:description" content="Explore sample membership plans and request a free trial at IronCore Fitness.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=1200&amp;q=75">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap bar">
+    <a href="#home" class="logo">IronCore<span>Fitness</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Main">
+      <a href="#about">About</a><a href="#plans">Plans</a><a href="#trial">Free Trial</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section id="home" class="hero">
+  <img class="hero-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=1200&amp;q=75" srcset="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=640&amp;q=70 640w, https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=1200&amp;q=75 1200w, https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=1800&amp;q=75 1800w" sizes="100vw" alt="" fetchpriority="high">
+  <div class="wrap hero-copy">
+    <h1>Strength is built on the days you show up.</h1>
+    <p>Coached floor sessions, serious equipment and a plan that fits your schedule. Start with a free trial and decide after you've trained with us.</p>
+    <div class="actions">
+      <a class="btn btn-red" href="#trial">Book a Free Trial</a>
+      <a class="btn btn-ghost" href="#plans">View Membership Plans</a>
+    </div>
+    <p class="note">IronCore Fitness is a fictional gym created for a learning project.</p>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <div class="wrap">
+    <h2>Built for beginners and lifters alike</h2>
+    <div class="two">
+      <p>IronCore began as a small training hall with one rule: every member gets noticed. Today the idea is the same. Trainers learn your goals, check your form and adjust your plan as you improve. <em>(Sample story for the demo.)</em></p>
+      <ul class="ticks">
+        <li>Free fitness assessment on your first visit</li>
+        <li>Trainers on the floor during all peak hours</li>
+        <li>Clean, air-conditioned training space</li>
+        <li>No joining pressure after your trial</li>
+      </ul>
+    </div>
+    <h3>Facilities and equipment</h3>
+    <ul id="facilities" class="grid facilities"></ul>
+    <h3>Meet the trainers <small>Fictional sample profiles</small></h3>
+    <div id="trainers" class="grid trainers"></div>
+  </div>
+</section>
+
+<section id="plans" class="section alt">
+  <div class="wrap">
+    <h2>Membership plans</h2>
+    <p class="lead">Sample prices for the demo. Taxes and joining fees, if any, are not shown.</p>
+    <div id="plan-list" class="grid plans"></div>
+  </div>
+</section>
+
+<section id="trial" class="section">
+  <div class="wrap narrow">
+    <h2>Book a free trial</h2>
+    <p class="lead">Tell us when you would like to visit. Our team will follow up to confirm.</p>
+    <p class="warn" role="note"><strong>Enquiry:</strong> your name, mobile number, preferred plan and visit date are sent to the enquiry service so the gym can respond. Do not enter payment details.</p>
+    <form id="trial-form" novalidate>
+      <div class="field"><label for="name">Full name</label>
+        <input id="name" name="name" autocomplete="name" maxlength="150" required aria-describedby="name-err"><p class="err" id="name-err" aria-live="polite"></p></div>
+      <div class="field"><label for="mobile">Mobile number</label>
+        <input id="mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="10-digit number, e.g. 9876543210" maxlength="30" required aria-describedby="mobile-err"><p class="err" id="mobile-err" aria-live="polite"></p></div>
+      <div class="field"><label for="plan">Preferred plan</label>
+        <select id="plan" name="plan" required aria-describedby="plan-err"><option value="">Select a plan</option></select><p class="err" id="plan-err" aria-live="polite"></p></div>
+      <div class="field"><label for="date">Preferred visit date</label>
+        <input id="date" name="date" type="date" required aria-describedby="date-err"><p class="err" id="date-err" aria-live="polite"></p></div>
+      <button class="btn btn-red" id="form-submit" type="submit">Request free trial</button>
+      <p id="form-status" role="status" tabindex="-1" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section id="contact" class="section alt">
+  <div class="wrap two">
+    <div>
+      <h2>Contact</h2>
+      <p><strong>Address (sample, not a real location):</strong><br>123 Sample Street, Your City, India</p>
+      <h3>Opening hours</h3>
+      <ul id="hours" class="hours"></ul>
+    </div>
+    <div>
+      <h3>Reach us</h3>
+      <p id="contact-note" class="note"></p>
+      <div class="actions">
+        <a id="call-btn" class="btn btn-red" href="#contact">Call</a>
+        <a id="wa-btn" class="btn btn-ghost" href="#contact">WhatsApp</a>
+        <a id="map-btn" class="btn btn-ghost" href="#contact">View map</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <nav aria-label="Footer"><a href="#about">About</a><a href="#plans">Plans</a><a href="#trial">Free Trial</a><a href="#contact">Contact</a><a href="#home">Back to top</a></nav>
+    <p>© <span id="year"></span> IronCore Fitness. Fictional gym for a learning project. Photos from Unsplash.</p>
+  </div>
+</footer>
+<dialog id="pay-dialog" aria-labelledby="pay-title">
+  <form method="dialog" id="pay-form">
+    <h2 id="pay-title">Join online</h2>
+    <p class="warn" role="note"><strong>Simulated payment:</strong> no money is charged and no card or UPI details are collected. Real payments need a backend and a payment gateway.</p>
+    <p id="pay-summary" class="pay-summary"></p>
+    <fieldset>
+      <legend>Payment method</legend>
+      <label class="radio"><input type="radio" name="method" value="UPI" checked> UPI (demo)</label>
+      <label class="radio"><input type="radio" name="method" value="Card" > Debit / credit card (demo)</label>
+      <label class="radio"><input type="radio" name="method" value="Netbanking"> Netbanking (demo)</label>
+      <label class="radio"><input type="radio" name="method" value="Pay at gym"> Pay at the gym (no online payment)</label>
+    </fieldset>
+    <p id="pay-status" role="status" tabindex="-1"></p>
+    <div class="actions">
+      <button type="submit" class="btn btn-red" id="pay-confirm">Confirm (simulated)</button>
+      <button type="button" class="btn btn-ghost" id="pay-close">Close</button>
+    </div>
+  </form>
+</dialog>
+<script src="script/data.js"></script>
+<script src="script/main.js"></script>
 </body>
 </html>
