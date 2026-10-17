@@ -114,10 +114,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IronCore Fitness | Gym, Trainers & Membership Plans (Sample Site)</title>
-<meta name="description" content="IronCore Fitness is a fictional gym used for a learning project. Explore sample membership plans in ₹ and book a free trial enquiry.">
+<title>IronCore Fitness | Membership Plans and Free Trial</title>
+<meta name="description" content="Explore sample IronCore Fitness membership plans and request a free trial. Enquiries are sent securely to the gym enquiry service.">
+<meta name="theme-color" content="#161616">
+<meta property="og:type" content="website">
+<meta property="og:title" content="IronCore Fitness | Membership Plans and Free Trial">
+<meta property="og:description" content="Explore sample membership plans and request a free trial at IronCore Fitness.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=1200&amp;q=75">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -135,7 +142,7 @@
 
 <main id="main">
 <section id="home" class="hero">
-  <img class="hero-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=70" alt="" fetchpriority="high">
+  <img class="hero-img" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=1200&amp;q=75" srcset="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=640&amp;q=70 640w, https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=1200&amp;q=75 1200w, https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&amp;fit=crop&amp;w=1800&amp;q=75 1800w" sizes="100vw" alt="" fetchpriority="high">
   <div class="wrap hero-copy">
     <h1>Strength is built on the days you show up.</h1>
     <p>Coached floor sessions, serious equipment and a plan that fits your schedule. Start with a free trial and decide after you've trained with us.</p>
@@ -177,19 +184,19 @@
 <section id="trial" class="section">
   <div class="wrap narrow">
     <h2>Book a free trial</h2>
-    <p class="lead">Tell us when you'd like to visit and we'll confirm.</p>
-    <p class="warn" role="note"><strong>Demo only:</strong> this form does not send data to a server. Test submissions are saved in this browser's localStorage, which is temporary and not suitable for real customer data.</p>
+    <p class="lead">Tell us when you would like to visit. Our team will follow up to confirm.</p>
+    <p class="warn" role="note"><strong>Enquiry:</strong> your name, mobile number, preferred plan and visit date are sent to the enquiry service so the gym can respond. Do not enter payment details.</p>
     <form id="trial-form" novalidate>
       <div class="field"><label for="name">Full name</label>
-        <input id="name" name="name" autocomplete="name" required aria-describedby="name-err"><p class="err" id="name-err"></p></div>
+        <input id="name" name="name" autocomplete="name" maxlength="150" required aria-describedby="name-err"><p class="err" id="name-err" aria-live="polite"></p></div>
       <div class="field"><label for="mobile">Mobile number</label>
-        <input id="mobile" name="mobile" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="10-digit number, e.g. 9XXXXXXXXX" required aria-describedby="mobile-err"><p class="err" id="mobile-err"></p></div>
+        <input id="mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="10-digit number, e.g. 9876543210" maxlength="30" required aria-describedby="mobile-err"><p class="err" id="mobile-err" aria-live="polite"></p></div>
       <div class="field"><label for="plan">Preferred plan</label>
-        <select id="plan" name="plan" required aria-describedby="plan-err"></select><p class="err" id="plan-err"></p></div>
+        <select id="plan" name="plan" required aria-describedby="plan-err"><option value="">Select a plan</option></select><p class="err" id="plan-err" aria-live="polite"></p></div>
       <div class="field"><label for="date">Preferred visit date</label>
-        <input id="date" name="date" type="date" required aria-describedby="date-err"><p class="err" id="date-err"></p></div>
-      <button class="btn btn-red" type="submit">Request free trial</button>
-      <p id="form-status" role="status" tabindex="-1"></p>
+        <input id="date" name="date" type="date" required aria-describedby="date-err"><p class="err" id="date-err" aria-live="polite"></p></div>
+      <button class="btn btn-red" id="form-submit" type="submit">Request free trial</button>
+      <p id="form-status" role="status" tabindex="-1" aria-live="polite"></p>
     </form>
   </div>
 </section>

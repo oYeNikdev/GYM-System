@@ -22,7 +22,8 @@
 const CONFIG = {
   phone: "",        // digits with country code, e.g. "91XXXXXXXXXX"
   whatsapp: "",     // same format
-  mapUrl: ""        // a Google Maps share link
+  mapUrl: "",       // a Google Maps share link
+  apiBaseUrl: "http://localhost:8080" // set to the deployed API origin, or "" for same-origin hosting
 };
  
 const PLANS = [

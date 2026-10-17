@@ -151,7 +151,7 @@ function setupContact() {
   set("#wa-btn", CONFIG.whatsapp && "https://wa.me/" + CONFIG.whatsapp);
   set("#map-btn", CONFIG.mapUrl);
   $("#contact-note").textContent = (CONFIG.phone && CONFIG.whatsapp && CONFIG.mapUrl)
-    ? "" : "Contact buttons are disabled until you add details in js/data.js.";
+    ? "" : "Contact buttons are disabled until you add details in script/data.js.";
 }
 
 // 3. Mobile menu
@@ -167,7 +167,7 @@ function setupMenu() {
 function validate(values) {
   const errors = {};
   if (values.name.trim().length < 2) errors.name = "Enter your full name (at least 2 characters).";
-  const digits = values.mobile.replace(/[\s-]/g, "").replace(/^(\+91|91|0)(?=\d{10}$)/, "");
+  const digits = values.mobile.replace(/\D/g, "").replace(/^(91|0)(?=\d{10}$)/, "");
   if (!/^[6-9]\d{9}$/.test(digits)) errors.mobile = "Enter a valid 10-digit Indian mobile number starting with 6, 7, 8 or 9.";
   if (!PLANS.some((p) => p.id === values.plan)) errors.plan = "Choose a plan.";
   if (!values.date) errors.date = "Choose a visit date.";
@@ -180,39 +180,74 @@ function todayISO() {
   return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
 }
 
-function saveTestEnquiry(entry) {
-  // TEMPORARY: replace with fetch("/api/enquiries", { method: "POST", ... }) when the backend exists.
-  const list = JSON.parse(localStorage.getItem("ironcore_test_enquiries") || "[]");
-  list.push(entry);
-  localStorage.setItem("ironcore_test_enquiries", JSON.stringify(list));
-}
-
 function setupForm() {
-  const form = $("#trial-form"), status = $("#form-status");
+  const form = $("#trial-form"), status = $("#form-status"), submit = $("#form-submit");
+  const apiBaseUrl = CONFIG.apiBaseUrl.replace(/\/$/, "");
+  const fieldIds = { name: "name", phone: "mobile", planId: "plan", preferredDate: "date" };
+  let submitting = false;
   $("#date").min = todayISO();
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    if (submitting) return;
     const values = Object.fromEntries(new FormData(form));
     const { errors, mobile } = validate(values);
     ["name", "mobile", "plan", "date"].forEach((f) => {
       $("#" + f + "-err").textContent = errors[f] || "";
-      $("#" + f).setAttribute("aria-invalid", Boolean(errors[f]));
+      $("#" + f).setAttribute("aria-invalid", String(Boolean(errors[f])));
     });
     status.className = "";
     if (Object.keys(errors).length) {
       status.textContent = "Please fix the highlighted fields and try again.";
       status.classList.add("error");
-      form.querySelector("[aria-invalid='true']").focus();
+      form.querySelector("[aria-invalid='true']")?.focus();
       return;
     }
+
+    submitting = true;
+    submit.disabled = true;
+    submit.textContent = "Sending...";
+    form.setAttribute("aria-busy", "true");
+    status.textContent = "Sending your enquiry...";
+    status.className = "loading";
     try {
-      saveTestEnquiry({ name: values.name.trim(), mobile, plan: values.plan, date: values.date, savedAt: new Date().toISOString() });
-      status.textContent = "Test enquiry saved in this browser only. Nothing was sent to IronCore.";
-      status.classList.add("success");
+      const response = await fetch(`${apiBaseUrl}/api/enquiries`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: values.name.trim(),
+          phone: mobile,
+          planId: values.plan,
+          preferredDate: values.date
+        })
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        Object.entries(result.fieldErrors || {}).forEach(([field, message]) => {
+          const id = fieldIds[field];
+          if (id) {
+            $("#" + id + "-err").textContent = message;
+            $("#" + id).setAttribute("aria-invalid", "true");
+          }
+        });
+        status.textContent = result.message || "Your enquiry could not be submitted. Please try again.";
+        status.className = "error";
+        form.querySelector("[aria-invalid='true']")?.focus();
+        return;
+      }
+
+      status.textContent = result.message || "Your enquiry has been received. We will contact you soon.";
+      status.className = "success";
       form.reset();
+      $("#plan").value = "";
+      ["name", "mobile", "plan", "date"].forEach((f) => $("#" + f).setAttribute("aria-invalid", "false"));
     } catch {
-      status.textContent = "Could not save in this browser (storage may be blocked). Try again.";
-      status.classList.add("error");
+      status.textContent = "We could not reach the enquiry service. Check your connection and try again.";
+      status.className = "error";
+    } finally {
+      submitting = false;
+      submit.disabled = false;
+      submit.textContent = "Request free trial";
+      form.removeAttribute("aria-busy");
     }
     status.focus();
   });
