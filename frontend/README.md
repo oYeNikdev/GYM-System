@@ -2,8 +2,6 @@
 
 This directory contains a React + Vite preview of the gym's public website. It uses custom CSS; Tailwind is not installed.
 
-The existing static HTML/CSS/JavaScript demo remains in [`Basics Frontend/`](../Basics%20Frontend/).
-
 ## Run locally
 
 ```powershell
