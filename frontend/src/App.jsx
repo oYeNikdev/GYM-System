@@ -28,9 +28,9 @@ function App() {
       <a className="skip-link" href="#main">Skip to content</a>
       <header className="site-header" onKeyDown={handleHeaderKeyDown}>
         <div className="header-inner">
-          <a className="wordmark" href="#home" onClick={closeMenu} aria-label="IronCore Fitness, home">
-            <span className="wordmark-mark" aria-hidden="true">IC</span>
-            <span>IRONCORE<span className="wordmark-light">FITNESS</span></span>
+          <a className="wordmark" href="#home" onClick={closeMenu} aria-label="Power Healthclub, home">
+            <span className="wordmark-mark" aria-hidden="true">PH</span>
+            <span>Power Health<span className="wordmark-light">club</span></span>
           </a>
           <button
             className="menu-toggle"
@@ -69,7 +69,7 @@ function App() {
               <a className="button button-primary" href="#membership">Explore example plans <span aria-hidden="true">↓</span></a>
               <a className="text-link" href="#approach">About this preview <span aria-hidden="true">↘</span></a>
             </div>
-            <p className="hero-caption">IRONCORE FITNESS <span>·</span> FICTIONAL DEMO BRAND</p>
+            <p className="hero-caption">POWER HEALTHCLUB <span>·</span> FICTIONAL DEMO BRAND</p>
           </div>
           <a className="hero-index" href="#approach" aria-label="Scroll to our approach">01 <span /> 04</a>
         </section>
@@ -115,15 +115,15 @@ function App() {
         </section>
 
         <section className="visit section-shell" id="visit" aria-labelledby="visit-title">
-          <div className="visit-stamp" aria-hidden="true">IC</div>
+          <div className="visit-stamp" aria-hidden="true">PH</div>
           <div className="visit-content">
             <div className="section-label"><span>03</span> BEFORE YOU VISIT</div>
             <h2 id="visit-title">Details first.<br /><span>Then the heavy lifting.</span></h2>
             <p>Address, opening hours, phone, WhatsApp, and map information are not verified yet. Contact actions are intentionally unavailable.</p>
             <div className="visit-details">
-              <div><span>LOCATION</span><strong>To be confirmed</strong></div>
-              <div><span>OPENING HOURS</span><strong>To be confirmed</strong></div>
-              <div><span>CONTACT</span><strong>To be confirmed</strong></div>
+              <div><span>LOCATION</span><strong>Noida, Uttar Pradesh</strong></div>
+              <div><span>OPENING HOURS</span><strong>6:00 AM - 10:00 PM</strong></div>
+              <div><span>CONTACT</span><strong>+91 xxx-xxx-xxxx</strong></div>
             </div>
             <p className="demo-notice">This React preview is informational only. It has no booking form and does not collect or submit personal information.</p>
           </div>
@@ -132,8 +132,8 @@ function App() {
 
       <footer className="site-footer">
         <a className="wordmark footer-wordmark" href="#home">
-          <span className="wordmark-mark" aria-hidden="true">IC</span>
-          <span>IRONCORE<span className="wordmark-light">FITNESS</span></span>
+          <span className="wordmark-mark" aria-hidden="true">PH</span>
+          <span>Power Health<span className="wordmark-light">club</span></span>
         </a>
         <p>Fictional demo brand <span>·</span> Business details to be confirmed</p>
         <a className="back-top" href="#home">Back to top ↑</a>
